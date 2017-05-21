@@ -84,6 +84,7 @@ Function Dienste-Auflisten($muster) {
     AusgabeTest Hallo Demo
     AusgabeTest Hallo + Demo
     AusgabeTest Hallo+Demo
+    AusgabeTest Hallo+ Demo
     AusgabeTest (Hallo + Demo)
     AusgabeTest ("Hallo" + " Demo")
 #>
