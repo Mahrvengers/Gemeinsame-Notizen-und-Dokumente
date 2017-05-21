@@ -5,6 +5,23 @@
 
     "Clausens Super-Tools"
 
+    Die Beispiele sind mit Erläuterungen versehen und in Funktionen
+    eingeschlossen. Das ermöglicht die Verwendung auf 2 Arten.
+    
+    Das günstigste Verfahren der Nutzung ist das Skript in einer ISE
+    zu öffnen. (Wenn Du Dinge tun willst wie Dienste zu starten und zu 
+    stoppen, dann benötigst du eine ISE die als Administrator 
+    ausgeführt wird, sonst geht das nicht.)
+
+    Dann führe das Skript einmal aus (lädt alle Quelltextbeispiele als Funktionen)
+    und gehe dann von oben nach unten die Beispiele durch, wobei
+    du nur die Zeilen jeweils markierst, die dich gerade interessieren, 
+    und nur diese ausführst.
+
+    Es gibt einige Funktionen, bei denen die Testaufrufe in Kommentaren 
+    geschrieben sind. Die kann man da auch schön markieren und dann ausführen.
+
+
     Mahr EDV GmbH
 
 #>
@@ -43,14 +60,33 @@ Function Dienste-SQLServer() {
     # Letzteres ist etwas kürzer in der Schreibweise.
 }
 
+<#
+    Das hier ist praktisch das Gleiche, nur dass wir 
+    hier statt der Festlegung auf ein Muster "SQL" 
+    das Muster einfach offen halten und den Parameter 
+    übergeben.
 
+    Nutzung z.B.:
+
+    Dienste-Auflisten "DNS"
+#>
 Function Dienste-Auflisten($muster) {
     Get-Service | ? DisplayName -match $muster
-    
-    # ? = Where-Object, % = Foreach-Object
-
 }
 
+<#
+    Mit dieser simplen Funktion kann man einige Dinge
+    zur Parameterübergabe klären.
+
+    Man vergleiche dazu die Ausgaben von : 
+
+    AusgabeTest "Hallo Demo"
+    AusgabeTest Hallo Demo
+    AusgabeTest Hallo + Demo
+    AusgabeTest Hallo+Demo
+    AusgabeTest (Hallo + Demo)
+    AusgabeTest ("Hallo" + " Demo")
+#>
 
 Function AusgabeTest($text) {
     Write-Host $text
@@ -91,20 +127,33 @@ Function Sql-Dienste-Beenden-wenn-sie-laufen() {
     }
 }
 
-Get-Service|? DisplayName -match "sql server vss writer"|Stop-Service
-Get-Service | ? DisplayName -match "SQL"
-
-Get-Service|? DisplayName -match "sql server vss writer"|start-Service
-Get-Service | ? DisplayName -match "SQL"
-
-$name = "Stefan"
-
-Write-Host "Hallo $name"
-Write-Host 'Hallo $name'
-Write-Host Hallo $name
-
-hallo.bat Hallo $name
+<# 
+    Dieser Quelltext demonstriert das Stoppen und
+    Starten ausgewählter Dienste.
+    Das Get-Service-Commandlet wird hier genutzt um 
+    einmal die Vorauswahl der Dienste auszuführen.
+#>
+Function Dienste-starten-und-stoppen-nach-Muster() {
+    Get-Service | ? DisplayName -match "sql server vss writer"|Stop-Service
+    Get-Service | ? DisplayName -match "sql server vss writer"|start-Service
+    Get-Service | ? DisplayName -match "SQL"
+}
 
 
-$a = 1
+<# Diese Demo zeigt zwei der drei Möglichkeiten in Powershell Zeichenketten 
+   anzugeben. 
+   Dabei wird ein Variableninhalt eingebettet. 
+#>
+Function Ausgaben-Mit-Variablen() {
+    $name = "Stefan"
+
+    # Ausgabe des Variableninhaltes, wenn die Zeichenkette in Double-Quotes ist
+    Write-Host "Hallo $name"
+    # Die einfachen Quotes sagen: Lass den Inhalt in Ruhe.
+    # Dadurch wird statt des Inhalts der Variable $name ausgegeben.
+    Write-Host 'Hallo $name'
+    # Hier wird defacto ein Array ausgegeben. 
+    # Es sieht aus wie die Ausgabe von oben.
+    Write-Host Hallo $name
+}
 
