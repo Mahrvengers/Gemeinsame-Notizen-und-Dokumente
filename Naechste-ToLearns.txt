@@ -1,0 +1,24 @@
+SQL Server 
+##########
+
+- Wartungspläne erstellen
+- Backups von Datenbanken einrichten
+- Backups wiederherstellen 
+  - Wiederherstellung aus DB-Dateien
+  - Wiederherstellung aus Backup
+  - Über Transaktionslogs und normal, Zurückrollen zu bestimmten Zeiten
+- Kann man da was mit Powershell machen? Oder eher nicht so (geringere Priorität)
+
+
+Gruppenrichtlinien
+##################
+
+- Fehlersuche
+   - Warum wird die Richtlinie nicht angewendet?
+
+
+Weitere Ideen
+#############
+
+Testsysteme
+  - kleine Domäne mit 2 Rechnern zum Vorführen von Powershell-Remoting
