@@ -7,3 +7,4 @@ Nächste Themen:
 
 - SQL Server
 - Zertifikate
+- Git und die Bedienung von Bitbucket
