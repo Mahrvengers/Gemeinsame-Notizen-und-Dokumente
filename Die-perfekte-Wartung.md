@@ -1,0 +1,5 @@
+-	Alle Backups laufen
+-	Monitoring ist durchweg sinnvoll und grün
+-	Alle Zugänge sind dokumentiert
+-	Alle Lizenzen sind dokumentiert
+-	Alle Passworte sind sicher …
