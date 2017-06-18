@@ -21,4 +21,4 @@ Weitere Ideen
 #############
 
 Testsysteme
-  - kleine Domäne mit 2 Rechnern zum Vorführen von Powershell-Remoting
+  - kleine Domäne mit 2 Rechnern zum Vorführen von Powershell-Remoting (Wow, das wäre cool:))
