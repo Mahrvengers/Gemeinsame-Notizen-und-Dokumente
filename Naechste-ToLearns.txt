@@ -2,11 +2,16 @@ SQL Server
 ##########
 
 - Wartungspläne erstellen
+
+
 - Backups von Datenbanken einrichten
 - Backups wiederherstellen 
   - Wiederherstellung aus DB-Dateien
   - Wiederherstellung aus Backup
   - Über Transaktionslogs und normal, Zurückrollen zu bestimmten Zeiten
+
+  --> Aufgabe vom letzten Mal wiederholen: Test-Datenbank in die Test-Recovery-Datenbank wiederherstellen.
+
 - Kann man da was mit Powershell machen? Oder eher nicht so (geringere Priorität)
 
 
